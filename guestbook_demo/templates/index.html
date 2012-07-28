@@ -15,4 +15,12 @@
         </li>
         {% endfor %}
     </ul>
+
+    <hr>
+
+    <form action="{{ url_for('signme') }}" method="POST">
+        <p>Name: <input type="text" name="name"></p>
+        <p>Message: <textarea name="message" rows="10" cols="40"></textarea></p>
+        <p><button>Sign</button></p>
+    </form>
 {% endblock %}
