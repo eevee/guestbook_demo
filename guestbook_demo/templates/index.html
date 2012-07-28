@@ -8,6 +8,11 @@
     <p>Hello, and welcome to my guestbook, because it's 1997!</p>
 
     <ul class="guests">
-        <li>...</li>
+        {% for entry in entries %}
+        <li>
+            <blockquote>{{ entry.message }}</blockquote>
+            <p>— <cite>{{ entry.name }}</cite>, <time>{{ entry.timestamp }}</time></p>
+        </li>
+        {% endfor %}
     </ul>
 {% endblock %}

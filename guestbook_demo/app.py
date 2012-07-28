@@ -13,4 +13,8 @@ def shutdown_session(exception=None):
 
 @app.route("/")
 def root():
-    return render_template('index.html')
+    # TODO paginate me!
+    entries = db.session.query(db.GuestbookEntry) \
+        .order_by(db.GuestbookEntry.timestamp.desc())
+
+    return render_template('index.html', entries=entries)
