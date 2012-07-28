@@ -1,1 +1,1 @@
-web: PYTHONPATH=. python -m guestbook_demo
+web: python -m guestbook_demo
