@@ -3,4 +3,7 @@ import os
 
 from guestbook_demo.app import app
 
-app.run(port=os.environ.get('PORT'))
+port = None
+if 'PORT' in os.environ:
+    port = int(os.environ['PORT'])
+app.run(port=port)
